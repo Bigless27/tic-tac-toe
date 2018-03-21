@@ -27,14 +27,14 @@ body {
 }
 
 .board {
-    width: 606px;
+    width: 618px;
 }
 
 .square {
     width: 200px;
     height: 200px;
     /* add below this second */
-    border: 1px solid gray;
+    border: 3px solid gray;
     font-size: 56px;
 }
 
@@ -51,4 +51,5 @@ body {
 
 .square:hover {
     background: floralwhite;
+    cursor: pointer;
 }
