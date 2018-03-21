@@ -1,0 +1,54 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.board-container {
+    height: 100%;
+    width: 100%
+}
+
+.board {
+    width: 606px;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    /* add below this second */
+    border: 1px solid gray;
+    font-size: 56px;
+}
+
+.inner-border {
+    width: 95%;
+    height: 95%;
+    border: 1px solid gray;
+    border: 1px solid gray;
+    font-size: 56px;
+}
+
+
+/* make x's and o's two different colors through javascript */
+
+.square:hover {
+    background: floralwhite;
+}
