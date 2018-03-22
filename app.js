@@ -18,7 +18,8 @@ var player2 = 'O';
 var currentTurn = 1;
 var movesMade = 0;
 
-var winner = $('.winner');
+var winnerContainer = $('.winner');
+var reset = $('.reset');
 
 var sqr = $('.square');
 
@@ -31,22 +32,36 @@ sqr.on('click', (e) => {
         event.target.innerHTML = player1;
         event.target.style.color = "red";
         if (checkForWinner()) {
-            winner.html(player1 + " Wins!");
-            winner.css('display', "block");
+            declareWinner(player1);
         }
         currentTurn++;
     } else {
         event.target.innerHTML = player2;
         event.target.style.color = "green";
         if (checkForWinner()) {
-
-            winner.innerHTML = player2 + " Wins!";
+            declareWinner(player2);
         }
         currentTurn--;
     }
-
-
 });
+
+reset.on('click', (e) => {
+    var moves = Array.prototype.slice.call($(".square"));
+    moves.map((m) => {
+        m.innerHTML = "";
+    });
+    winnerContainer.html('');
+    winnerContainer.css('display', "none");
+    reset.css('display', 'none');
+});
+
+
+
+function declareWinner(winner) {
+    winnerContainer.css('display', "block");
+    reset.css('display', 'block');
+    winnerContainer.html(winner + " Wins!");
+}
 
 function checkForWinner() {
     //need at least four moves to check for a winner
