@@ -8,7 +8,7 @@ body {
 .title {
     font-size: 42px;
     color: black;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .flex-container {
@@ -54,9 +54,37 @@ body {
 }
 
 .winner {
-    /* display: none; */
+    display: none;
+    padding: 10px;
+    font-size: 32px;
+    color: royalblue;
 }
 
 .reset {
-    display: none;
+    padding: 10px;
+    margin: 10px
 }
+
+
+/* maybe add an animation */
+
+
+/* .pulsate {
+    -webkit-animation: pulsate 5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+} */
+
+
+/* @-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+        font-size: 40px;
+    }
+    10% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+} */

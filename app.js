@@ -31,17 +31,16 @@ sqr.on('click', (e) => {
     if (currentTurn % 2 === 1) {
         event.target.innerHTML = player1;
         event.target.style.color = "red";
-        if (checkForWinner()) {
-            declareWinner(player1);
-        }
         currentTurn++;
     } else {
         event.target.innerHTML = player2;
         event.target.style.color = "green";
-        if (checkForWinner()) {
-            declareWinner(player2);
-        }
         currentTurn--;
+    }
+
+    if (checkForWinner()) {
+        theWinner = currentTurn == 1 ? player2 : player1;
+        declareWinner(theWinner);
     }
 });
 
@@ -52,14 +51,13 @@ reset.on('click', (e) => {
     });
     winnerContainer.html('');
     winnerContainer.css('display', "none");
-    reset.css('display', 'none');
+    currentTurn = 1;
 });
-
-
 
 function declareWinner(winner) {
     winnerContainer.css('display', "block");
     reset.css('display', 'block');
+    winner = winner === player1 ? 'Ryan' : 'India';
     winnerContainer.html(winner + " Wins!");
 }
 
