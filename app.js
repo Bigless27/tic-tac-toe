@@ -12,13 +12,13 @@
 
 //load jQuery and put javascript tag below content
 
-players = {
-    1: "X",
-    2: "O"
-}
+var player1 = 'X';
+var player2 = 'O';
 
 var currentTurn = 1;
 var movesMade = 0;
+
+var winner = $('.winner');
 
 var sqr = $('.square');
 
@@ -26,21 +26,26 @@ var sqr = $('.square');
 sqr.on('click', (e) => {
     movesMade++;
     //this is keeping track of whose turn it is
+    //if it's odd then it's player one's turn else player two's
     if (currentTurn % 2 === 1) {
-        event.target.innerHTML = players[currentTurn];
+        event.target.innerHTML = player1;
         event.target.style.color = "red";
         if (checkForWinner()) {
-            console.log(players[currentTurn] + " Wins!");
+            winner.html(player1 + " Wins!");
+            winner.css('display', "block");
         }
         currentTurn++;
     } else {
-        event.target.innerHTML = players[currentTurn];
+        event.target.innerHTML = player2;
         event.target.style.color = "green";
         if (checkForWinner()) {
-            console.log(players[currentTurn] + " Wins!");
+
+            winner.innerHTML = player2 + " Wins!";
         }
         currentTurn--;
     }
+
+
 });
 
 function checkForWinner() {

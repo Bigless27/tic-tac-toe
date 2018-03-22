@@ -2,6 +2,13 @@ html,
 body {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
+    background-color: gainsboro;
+}
+
+.title {
+    font-size: 42px;
+    color: black;
+    margin-bottom: 40px;
 }
 
 .flex-container {
@@ -34,15 +41,7 @@ body {
     width: 200px;
     height: 200px;
     /* add below this second */
-    border: 3px solid gray;
-    font-size: 56px;
-}
-
-.inner-border {
-    width: 95%;
-    height: 95%;
-    border: 1px solid gray;
-    border: 1px solid gray;
+    border: 3px solid mediumslateblue;
     font-size: 56px;
 }
 
@@ -52,4 +51,12 @@ body {
 .square:hover {
     background: floralwhite;
     cursor: pointer;
+}
+
+.winner {
+    /* display: none; */
+}
+
+.reset {
+    display: none;
 }
